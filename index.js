@@ -1,18 +1,18 @@
-let myButton = document.querySelector('button');
-let myHeading = document.querySelector('h1');
+let myButton = document.querySelector("button");
+let myHeading = document.querySelector("h1");
 
 function setUserName() {
-  let myName = prompt('Please enter your name.');
-  localStorage.setItem('name', myName);
-  myHeading.textContent = 'Mozilla is cool, ' + myName;
+  let myName = prompt("Please enter your name.");
+  localStorage.setItem("name", myName);
+  myHeading.textContent = "Hello " + myName;
 }
-
-if(!localStorage.getItem('name')) {
+if (!localStorage.getItem("name")) {
   setUserName();
 } else {
-  let storedName = localStorage.getItem('name');
-  myHeading.textContent = 'Mozilla is cool, ' + storedName;
+  let storedName = localStorage.getItem("name");
+  myHeading.textContent = "Hello " + storedName;
 }
-myButton.onclick = function() {
-  setUserName();
+myButton.onclick = function() {};
+if (setUserName() == true) {
+  localStorage.removeItem();
 }
